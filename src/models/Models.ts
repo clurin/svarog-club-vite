@@ -26,12 +26,10 @@ export interface Coach {
 
 export interface Discipline {
     position: number
+    name: string
     title: string
-    image: {
-        _type: string
-        asset: {
-            _ref: string
-            _type: string
-        }
-    }
+    discription: string
+    image_main: string,
+    image_1: string,
+    image_2: string
 }

@@ -1,22 +1,20 @@
-import './App.css'
-import Schedule from './components/Schedule'
-import Coaches from "./components/Coaches";
-import Disciplines from "./components/Disciplines";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Acomponent from "./components/Acomponent";
+import Header from "./components/Header";
+import DisciplineDetail from "./components/DisciplineDetail";
 import Footer from "./components/Footer";
-import Intro from "./components/Intro";
 
 function App() {
   return (
-    <div>
-      <div className='flex items-center justify-center w-full h-24 px-10 bg-neutral-800'>
-        <p className='text-main-red text-3xl'>СВАРОГ</p>
-      </div>
-      <Intro />
-      <Disciplines />
-      <Schedule />
-      <Coaches />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Acomponent />} />
+        <Route path="/discipline/:name" element={<DisciplineDetail />} />
+      </Routes>
       <Footer />
-    </div>
+
+    </BrowserRouter>
   );
 }
 

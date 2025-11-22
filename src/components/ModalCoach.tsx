@@ -35,7 +35,7 @@ export default function ModalCoach({ coach, onClose }: { coach: Coach | null; on
                     height={250}
                     className="object-cover mx-auto mb-1 md:pt-3"
                 />
-                <h2 className="text-xl text-center text-black mb-2">{coach.name}</h2>
+                <p className="text-md max-[330px]:text-wrap text-nowrap text-center text-black mb-2">{coach.name}</p>
                 <p className="text-sm text-neutral-700 mb-1">
                     Дисциплины: <span className='text-xs'>{coach.disciplines.join(', ')}</span>
                 </p>

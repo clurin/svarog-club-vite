@@ -2,7 +2,7 @@ import { FaWhatsapp, FaTelegramPlane, FaVk } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <footer className=" text-white py-8">
+        <footer className=" text-white pb-8 mt-5 bg-back-color">
             <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-around items-start md:items-center">
                 <div>
                     <p className='text-2xl md:text-3xl'>АДРЕСА</p>

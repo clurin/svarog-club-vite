@@ -7,13 +7,14 @@ export default function Coaches() {
   const [selectedCoach, setSelectedCoach] = useState<Coach | null>(null)
 
   return (
-    <div className="pt-19 pb-15 bg-black">
+    <div className="pt-19 pb-6 bg-black">
       <p className="text-3xl text-center">Тренерский <br /> состав</p>
 
       <div className="flex flex-wrap justify-center mt-9 gap-6 mx-6">
         {coaches.map(coach => (
           <div
-            className="relative w-[300px] h-[220px] overflow-hidden cursor-pointer"
+            className="relative w-[300px] h-[220px] overflow-hidden cursor-pointer border-2 border-solid border-white
+             transform transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-neutral-600"
             onClick={() => setSelectedCoach(coach as Coach)}
           >
             <img
@@ -28,7 +29,7 @@ export default function Coaches() {
                 <div key={i}>{d}</div>
               ))}
             </div>
-            <div className="absolute bottom-0 right-0 bg-main-red text-white text-base px-2 tracking-tight">
+            <div className="absolute text-nowrap bottom-0 right-0 bg-main-red text-white text-base px-2 tracking-tight">
               {coach.name}
             </div>
           </div>
