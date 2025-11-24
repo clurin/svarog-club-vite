@@ -19,7 +19,7 @@ const Intro = () => {
                     width={150}
                     height={150}
                 />
-                <h1 className="whitespace-nowrap pt-17 md:text-xl text-base text-main-red"
+                <h1 className="tracking-tight whitespace-nowrap pt-17 md:text-xl text-base text-main-red"
                     style={{ WebkitTextStroke: '0.3px gray' }}>
                     Одни мечтают, другие побеждают
                 </h1>

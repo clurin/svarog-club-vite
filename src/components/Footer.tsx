@@ -8,10 +8,11 @@ const Footer = () => {
                     <p className='text-2xl md:text-3xl'>АДРЕСА</p>
                     <span className='text-base md:text-xl tracking-tighter'>
                         Купчино, ул. Будапештская 97к2 <br />
-                        Купчино, ул. Димитрова 9к3, школа 364 <br />
+                        Купчино, ул. Димитрова 9к3, <span className="whitespace-nowrap">школа 364</span> <br />
                         Шушары, ул. Окуловская 18к1 <br />
-                        Шушары, ул. Первомайская 30, школа 93
+                        Шушары, ул. Первомайская 30, <span className="whitespace-nowrap">школа 93</span>
                     </span>
+
                 </div>
                 <div className=''>
                     <p className='pt-5 md:pt-0 text-2xl md:text-3xl'>Контакты</p>

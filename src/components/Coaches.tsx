@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { coaches } from '../data/coaches'
 import ModalCoach from './ModalCoach'
 import type { Coach } from '../models/Models'
+import ConnectionButton from './ConnectionButton'
 
 export default function Coaches() {
   const [selectedCoach, setSelectedCoach] = useState<Coach | null>(null)
@@ -24,12 +25,13 @@ export default function Coaches() {
               alt={coach.name}
               className="object-cover"
             />
-            <div className="absolute top-0 left-0 bg-main-yellow text-black text-sm px-1">
+            <div className="absolute top-0 left-0 bg-main-yellow/70 backdrop-blur-sm text-black text-sm px-1">
               {coach.disciplines.map((d, i) => (
                 <div key={i}>{d}</div>
               ))}
             </div>
-            <div className="absolute text-nowrap bottom-0 right-0 bg-main-red text-white text-base px-2 tracking-tight">
+
+            <div className="absolute text-nowrap bottom-0 right-0 bg-red-700 text-white text-base px-2 tracking-tight">
               {coach.name}
             </div>
           </div>
@@ -37,6 +39,7 @@ export default function Coaches() {
       </div>
 
       <ModalCoach coach={selectedCoach} onClose={() => setSelectedCoach(null)} />
+        <ConnectionButton hidden={!!selectedCoach} />
     </div>
   )
 }

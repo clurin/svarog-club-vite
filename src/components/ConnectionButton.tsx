@@ -2,18 +2,19 @@ import { useState } from "react"
 import { FaPhone, FaWhatsapp } from "react-icons/fa"
 import { FaMessage, FaVk } from "react-icons/fa6"
 
-const ConnectionButton = () => {
+const ConnectionButton = ({ hidden }: { hidden?: boolean }) => {
     const [open, setOpen] = useState(false)
+    if (hidden) return null
 
     return (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-6 right-6 z-30">
             {open && (
                 <div className="flex flex-col gap-3 mb-3 items-center">
                     <a
                         href="tel:+78129821049"
-                        className="p-3 bg-red-900/60 shadow-lg backdrop-blur-md rounded-full cursor-pointer"
+                        className="p-3 bg-red-900/60 text-neutral-100 shadow-lg backdrop-blur-md rounded-full cursor-pointer"
                     >
-                        <FaPhone size={22} color="black" />
+                        <FaPhone size={22} />
                     </a>
 
                     <a

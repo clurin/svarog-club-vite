@@ -5,58 +5,57 @@ import type { KarateScheduleItem, ScheduleItem } from "../models/Models";
 
 const ScheduleSection = ({ title, items }: { title: string, items: ScheduleItem[] }) => (
     <div>
-        <p className="w-[55%] mx-auto md:mx-auto flex justify-center items-center h-8 md:w-[40%] md:h-10 md:text-2xl bg-main-orange [box-shadow:0_-4px_6px_-4px_rgba(0,0,0,0.3)]">
+        <p className="w-[60%] mx-auto md:mx-auto flex justify-center items-center h-8 md:w-[40%] md:h-10 text-xl md:text-2xl bg-main-orange [box-shadow:0_-4px_6px_-4px_rgba(0,0,0,0.3)]">
             {title}
         </p>
-        <div className="w-full max-w-[95%] md:max-w-[50%] mx-auto [word-spacing:-5px]">
+        <div className="w-full max-w-[99%] md:max-w-[50%] mx-auto [word-spacing:-5px] tracking-tight">
             {items.map((item) => (
-                <div className="-mt-0.5 grid grid-cols-4 border-2 text-center border-solid border-black bg-white text-black text-base">
+                <div className="-mt-0.5 grid grid-cols-3 border-2 text-center border-solid border-black bg-white text-black text-xl">
                     <div className="border-r-2 border-solid border-black p-2 text-center">{item.ageGroup} лет</div>
-                    <div className="border-r-2 border-solid border-black p-2 text-center">{item.days.join(', ')}</div>
-                    <div className="border-r-2 border-solid border-black p-2 text-center text-nowrap max-[360px]:text-wrap">{item.time}</div>
-                    <div className="border-solid border-black p-2 text-center max-[360px]:text-wrap ">{item.price} <span className='text-sm'>Руб</span></div>
+                    <div className="border-r-2 border-solid border-black p-2 text-center text-nowrap">{item.days.join(', ')}</div>
+                    <div className="border-solid border-black p-2 text-center text-nowrap">{item.time}</div>
                 </div>
             ))}
+            <p className="tracking-wide bg-white text-black border-2 border-t-0 border-solid border-black p-2 text-center text-nowrap">
+                <span className="text-xl">{items[0]?.price}</span> руб. в месяц
+            </p>
         </div>
     </div>
 )
 
 const KarateScheduleSection = ({ title, items }: { title: string, items: KarateScheduleItem[] }) => (
     <div>
-        <p className="w-[55%] mx-auto md:mx-auto flex justify-center items-center h-8 md:w-[40%] md:h-10 md:text-2xl bg-main-orange [box-shadow:0_-4px_6px_-4px_rgba(0,0,0,0.3)]">
+        <p className="w-[60%] mx-auto md:mx-auto flex justify-center items-center h-8 md:w-[40%] md:h-10 text-xl md:text-2xl bg-main-orange [box-shadow:0_-4px_6px_-4px_rgba(0,0,0,0.3)]">
             {title}
         </p>
 
-        <div className="w-full max-w-[95%] md:max-w-[50%] mx-auto overflow-x-auto">
+        <div className="w-full max-w-[99%] md:max-w-[50%] mx-auto overflow-x-auto">
             <table className="w-full table-fixed border-2 border-black text-base text-center bg-white text-black border-collapse">
                 <colgroup>
-                    <col className="w-1/4" />
-                    <col className="w-1/4" />
-                    <col className="w-1/4" />
-                    <col className="w-1/4" />
+                    <col className="w-1/3" />
+                    <col className="w-1/3" />
+                    <col className="w-1/3" />
                 </colgroup>
 
                 <tbody>
                     {items.map(item =>
                         item.schedule.map((s, idx) => (
-                            <tr className="border-2 border-black">
+                            <tr className="text-nowrap border-2 border-black text-xl ">
                                 {idx === 0 && (
                                     <td rowSpan={item.schedule.length} className="border-2 border-black p-2 align-middle">
                                         {item.ageGroup} лет
                                     </td>
                                 )}
-                                <td className="border-2 border-black p-2">{s.days.join(', ')}</td>
-                                <td className="border-2 border-black p-2 text-nowrap  max-[360px]:text-wrap">{s.time}</td>
-                                {idx === 0 && (
-                                    <td rowSpan={item.schedule.length} className="border-2 border-black p-2 align-middle">
-                                        {item.price} <span className="text-sm">Руб</span>
-                                    </td>
-                                )}
+                                <td className="border-2 border-black text-xl p-2">{s.days.join(', ')}</td>
+                                <td className="border-2 border-black text-xl p-2 text-nowrap">{s.time}</td>
                             </tr>
                         ))
                     )}
                 </tbody>
             </table>
+            <p className="bg-white text-black border-2 border-t-0 border-solid border-black p-2 text-center text-nowrap">
+                <span className="text-xl">{items[0]?.price}</span> руб. в месяц
+            </p>
         </div>
     </div>
 )
@@ -105,7 +104,7 @@ const Schedule = () => {
                 <KarateScheduleSection title="Тхэквондо" items={shushariTaekwondoSchedule as KarateScheduleItem[]} />
                 <ScheduleSection title="ММА" items={shushariMMASchedule as ScheduleItem[]} />
                 <ScheduleSection title="Каратэ" items={shushariKarateSchedule as ScheduleItem[]} />
-                <p className='w-full h-10 text-xl md:h-12 md:text-3xl flex justify-center items-center bg-main-red tracking-tight'>
+                <p className='w-full h-10 text-xl md:h-12 md:text-3xl flex justify-center items-center bg-main-red tracking-tighter'>
                     ул. Первомайская 30, школа 93
                 </p>
                 <ScheduleSection title="Каратэ" items={shushariSchoolSchedule as ScheduleItem[]} />

@@ -25,7 +25,7 @@ const DisciplineDetail = () => {
                 <p className="mt-15 text-3xl md:text-4xl text-white">
                     <span className="text-2xl block">Спортивный клуб</span> Сварог
                 </p>
-                <h1 className="mt-10 text-4xl text-main-red">{discipline?.title}</h1>
+                <h1 className="mt-10 text-4xl text-nowrap text-main-red">{discipline?.title}</h1>
                 <p className="mt-4">Тренировки для детей <br /> и взрослых</p>
                 <a
                     href="https://wa.me/79650934512?text=Здравствуйте!%20Хочу%20записаться%20на%20тренировку"

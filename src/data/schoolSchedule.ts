@@ -47,6 +47,6 @@ export const schoolSchedule = [
     "location": "shushari",
     "position": 2,
     "price": 5000,
-    "time": "16:30-18:30"
+    "time": "16:30-18:00"
   },
 ]
