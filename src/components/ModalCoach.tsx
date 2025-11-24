@@ -23,7 +23,7 @@ export default function ModalCoach({ coach, onClose }: { coach: Coach | null; on
             <div className="bg-white opacity-90 p-2 max-w-md w-[80%] relative"
                 onClick={(e) => e.stopPropagation()}>
                 <button
-                    className="absolute cursor-pointer top-2 right-3 bg-neutral-800 p-1 text-main-red text-xl"
+                    className="absolute cursor-pointer top-2 left-3 bg-neutral-800 p-1 text-main-red text-xl"
                     onClick={onClose}>
                     закрыть
                 </button>

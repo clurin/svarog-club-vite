@@ -5,6 +5,7 @@ import type { Discipline } from "../models/Models";
 const DisciplineDetail = () => {
     const { name } = useParams()
     const discipline: Discipline | undefined = disciplines.find(d => d.name === name)
+    const paragraphs = discipline?.discription.split('. ') || []
 
     return (
         <div className="relative w-full">
@@ -36,16 +37,20 @@ const DisciplineDetail = () => {
                     Узнать <br /> стоимость
                 </a>
                 <div className="mt-15 flex flex-col gap-5 items-center">
-                    <p className="text-xl text-left md:w-[70%]">{discipline?.discription}</p>
+                    <div className="text-xl text-left md:w-[70%] flex flex-col gap-4">
+                        {paragraphs?.map((text, i) => (
+                            <p key={i}>{text.trim()}.</p>
+                        ))}
+                    </div>
                     <div className="flex flex-wrap gap-4 justify-center mt-4">
                         <img
                             src={discipline?.image_1}
                             alt={discipline?.title}
-                            className="w-[90%] md:w-[50%] object-cover" />
+                            className="w-[90%] md:w-[40%] object-cover shadow-lg shadow-neutral-500" />
                         <img
                             src={discipline?.image_2}
                             alt={discipline?.title}
-                            className="w-[90%] md:w-[50%] object-cover" />
+                            className="w-[90%] md:w-[40%] object-cover shadow-lg shadow-neutral-500" />
                     </div>
                 </div>
             </div>

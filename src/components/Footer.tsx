@@ -2,20 +2,23 @@ import { FaWhatsapp, FaTelegramPlane, FaVk } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <footer className=" text-white pb-8 mt-5 bg-back-color">
+        <footer className="mt-10 text-white pb-8 bg-back-color">
             <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-around items-start md:items-center">
                 <div>
                     <p className='text-2xl md:text-3xl'>АДРЕСА</p>
-                    <span className='text-base md:text-xl'>
-                        ул. Будапештская 97к2 <br />
-                        ул. Димитрова 9к3, школа 364 <br />
-                        ул. Окуловская 18к1 <br />
-                        ул. Первомайская 30, школа 93
+                    <span className='text-base md:text-xl tracking-tighter'>
+                        Купчино, ул. Будапештская 97к2 <br />
+                        Купчино, ул. Димитрова 9к3, школа 364 <br />
+                        Шушары, ул. Окуловская 18к1 <br />
+                        Шушары, ул. Первомайская 30, школа 93
                     </span>
                 </div>
                 <div className=''>
                     <p className='pt-5 md:pt-0 text-2xl md:text-3xl'>Контакты</p>
-                    <span>+7 (812) 982-10-49</span>
+                    <a href="tel:+78129821049" className="hover:underline">
+                        +7 (812) 982-10-49
+                    </a>
+
                     <div className="flex gap-4 text-2xl">
                         <a href="https://wa.me/79650934512?text=Здравствуйте!%20Хочу%20записаться%20на%20тренировку"
                             target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-green-500 transition-colors">
