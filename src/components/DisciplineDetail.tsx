@@ -1,11 +1,15 @@
 import { useParams } from "react-router-dom";
 import { disciplines } from "../data/disciplines";
 import type { Discipline } from "../models/Models";
+import { useState } from "react";
+import ContactForm from "./ContactForm";
 
 const DisciplineDetail = () => {
     const { name } = useParams()
     const discipline: Discipline | undefined = disciplines.find(d => d.name === name)
     const paragraphs = discipline?.discription.split('. ') || []
+    const [open, setOpen] = useState(false);
+
 
     return (
         <div className="relative w-full">
@@ -27,15 +31,17 @@ const DisciplineDetail = () => {
                 </p>
                 <h1 className="mt-10 text-4xl text-nowrap text-main-red">{discipline?.title}</h1>
                 <p className="mt-4">Тренировки для детей <br /> и взрослых</p>
-                <a
-                    href="https://wa.me/79650934512?text=Здравствуйте!%20Хочу%20записаться%20на%20тренировку"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    onClick={() => setOpen(true)}
                     className="mt-8 w-[70%] max-w-xs p-3 text-xl md:text-2xl text-center
                      bg-red-700 text-white shadow-md hover:text-main-red hover:bg-main-yellow 
-                     transition-colors">
-                    Узнать <br /> стоимость
-                </a>
+                     transition-colors"
+                >
+                    Записаться на тренировку
+                </button>
+
+                {open && <ContactForm onClose={() => setOpen(false)} />}
+
                 <div className="mt-15 flex flex-col gap-5 items-center">
                     <div className="text-xl text-left md:w-[70%] flex flex-col gap-4">
                         {paragraphs?.map((text, i) => (

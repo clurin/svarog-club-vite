@@ -1,4 +1,9 @@
+import { useState } from "react"
+import ContactForm from "./ContactForm"
+
 const Intro = () => {
+    const [open, setOpen] = useState(false);
+
     return (
         <div className="relative w-full h-[570px]">
             <img
@@ -31,13 +36,14 @@ const Intro = () => {
                 </p>
             </div>
 
-            <a href="https://wa.me/79650934512?text=Здравствуйте!%20Хочу%20записаться%20на%20тренировку"
-                target="_blank"
-                rel="noopener noreferrer">
-                <p className="p-3 min-w-[200px] shadow-md shadow-neutral-500 max-[360px]:text-xl absolute bottom-5 left-1/2 -translate-x-1/2 hover:text-main-red transition-colors hover:bg-main-yellow bg-red-700 text-xl md:text-3xl text-center">
-                    Записаться на тренировку
-                </p>
-            </a>
+            <button
+                onClick={() => setOpen(true)}
+                className="p-3 min-w-[200px] shadow-md shadow-neutral-500 max-[360px]:text-xl absolute bottom-5 left-1/2 -translate-x-1/2 hover:text-main-red transition-colors hover:bg-main-yellow bg-red-700 text-xl md:text-3xl text-center"
+            >
+                Записаться на тренировку
+            </button>
+
+            {open && <ContactForm onClose={() => setOpen(false)} />}
         </div>
 
     )

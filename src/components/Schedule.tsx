@@ -5,7 +5,7 @@ import type { KarateScheduleItem, ScheduleItem } from "../models/Models";
 
 const ScheduleSection = ({ title, items }: { title: string, items: ScheduleItem[] }) => (
     <div>
-        <p className="w-[60%] mx-auto md:mx-auto flex justify-center items-center h-8 md:w-[40%] md:h-10 text-xl md:text-2xl bg-main-orange [box-shadow:0_-4px_6px_-4px_rgba(0,0,0,0.3)]">
+        <p className="w-[70%] mx-auto md:mx-auto flex justify-center items-center h-8 md:w-[40%] md:h-10 text-xl md:text-2xl bg-main-orange [box-shadow:0_-4px_6px_-4px_rgba(0,0,0,0.3)]">
             {title}
         </p>
         <div className="w-full max-w-[99%] md:max-w-[50%] mx-auto [word-spacing:-5px] tracking-tight">
@@ -77,18 +77,18 @@ const Schedule = () => {
     return (
         <div className='w-full mt-19 bg-black'>
             <p className='text-3xl text-center pt-5'>Расписание<br />занятий</p>
-            <div className='bg-[#C3C4D1] pb-3'>
+            <div className='bg-back-color pb-3'>
                 <p className='w-full h-10 md:h-14 md:text-4xl mt-10 text-2xl flex justify-center items-center bg-kupchino'>
                     Купчино
                 </p>
-                <p className='w-full h-10 md:h-12 md:text-3xl text-2xl flex justify-center items-center bg-main-red'>
+                <p className='w-full h-10 md:h-12 md:text-3xl text-2xl flex justify-center items-center bg-red-600'>
                     ул. Будапештская 97к2
                 </p>
                 <ScheduleSection title="Рукопашный бой" items={kupchinoHandtohandSchedule as ScheduleItem[]} />
                 <KarateScheduleSection title="Каратэ" items={kupchinoKarateSchedule as KarateScheduleItem[]} />
                 <ScheduleSection title="Кикбоксинг" items={kupchinoKickboxingSchedule as ScheduleItem[]} />
                 <ScheduleSection title="ММА" items={kupchinoMMASchedule as ScheduleItem[]} />
-                <p className='w-full h-10 md:h-12 md:text-3xl text-xl flex justify-center items-center bg-main-red tracking-tight'>
+                <p className='w-full h-10 md:h-12 md:text-3xl text-xl flex justify-center items-center bg-red-600 tracking-tight'>
                     ул. Димитрова 9к3, школа 364
                 </p>
                 <ScheduleSection title="Рукопашный бой" items={kupchinoSchoolSchedule as ScheduleItem[]} />
@@ -97,14 +97,14 @@ const Schedule = () => {
                 <p className='w-full h-10 text-2xl  md:h-14 md:text-4xl flex justify-center items-center bg-shushari'>
                     Шушары
                 </p>
-                <p className='w-full h-10 text-2xl  md:h-12 md:text-3xl flex justify-center items-center bg-main-red'>
+                <p className='w-full h-10 text-2xl  md:h-12 md:text-3xl flex justify-center items-center bg-red-600'>
                     ул. Окуловская 18
                 </p>
                 <ScheduleSection title="Рукопашный бой" items={shushariHandtohandSchedule as ScheduleItem[]} />
                 <KarateScheduleSection title="Тхэквондо" items={shushariTaekwondoSchedule as KarateScheduleItem[]} />
                 <ScheduleSection title="ММА" items={shushariMMASchedule as ScheduleItem[]} />
                 <ScheduleSection title="Каратэ" items={shushariKarateSchedule as ScheduleItem[]} />
-                <p className='w-full h-10 text-xl md:h-12 md:text-3xl flex justify-center items-center bg-main-red tracking-tighter'>
+                <p className='w-full h-10 text-xl md:h-12 md:text-3xl flex justify-center items-center bg-red-600 tracking-tighter'>
                     ул. Первомайская 30, школа 93
                 </p>
                 <ScheduleSection title="Каратэ" items={shushariSchoolSchedule as ScheduleItem[]} />

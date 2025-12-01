@@ -11,12 +11,11 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Header />
-
       <Routes>
         <Route path="/" element={<Acomponent />} />
         <Route path="/discipline/:name" element={<DisciplineDetail />} />
       </Routes>
-      
+
       <Footer />
       <ConnectionButton />
     </BrowserRouter>
