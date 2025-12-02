@@ -105,6 +105,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                         <input
                             type="text"
                             placeholder="Ваше имя"
+                            maxLength={20}
                             value={name}
                             onChange={(e) => {
                                 const value = e.target.value.replace(/[^а-яА-Яa-zA-Z\s]/g, "")

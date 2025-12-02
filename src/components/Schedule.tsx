@@ -98,7 +98,7 @@ const Schedule = () => {
                     Шушары
                 </p>
                 <p className='w-full h-10 text-2xl  md:h-12 md:text-3xl flex justify-center items-center bg-red-600'>
-                    ул. Окуловская 18
+                    ул. Окуловская 18к1
                 </p>
                 <ScheduleSection title="Рукопашный бой" items={shushariHandtohandSchedule as ScheduleItem[]} />
                 <KarateScheduleSection title="Тхэквондо" items={shushariTaekwondoSchedule as KarateScheduleItem[]} />
