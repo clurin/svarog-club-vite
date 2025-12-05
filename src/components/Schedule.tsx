@@ -77,7 +77,7 @@ const Schedule = () => {
     return (
         <div className='w-full mt-19 bg-black'>
             <p className='text-3xl text-center pt-5'>Расписание<br />занятий</p>
-            <div className='bg-back-color pb-3'>
+            <div className='bg-[#353e50] pb-3'>
                 <p className='w-full h-10 md:h-14 md:text-4xl mt-10 text-2xl flex justify-center items-center bg-kupchino'>
                     Купчино
                 </p>
@@ -93,7 +93,7 @@ const Schedule = () => {
                 </p>
                 <ScheduleSection title="Рукопашный бой" items={kupchinoSchoolSchedule as ScheduleItem[]} />
             </div>
-            <div className='bg-[#C3C4D1] pb-3'>
+            <div className='bg-[#38263b] pb-3'>
                 <p className='w-full h-10 text-2xl  md:h-14 md:text-4xl flex justify-center items-center bg-shushari'>
                     Шушары
                 </p>

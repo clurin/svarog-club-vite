@@ -10,28 +10,22 @@ const ConnectionButton = ({ hidden }: { hidden?: boolean }) => {
         <div className="fixed bottom-6 right-6 z-30">
             {open && (
                 <div className="flex flex-col gap-3 mb-3 items-center">
-                    <a
-                        href="tel:+78129821049"
-                        className="p-3 bg-red-900/60 text-neutral-100 shadow-lg backdrop-blur-md rounded-full cursor-pointer"
-                    >
+                    <a href="tel:+78129821049"
+                        className="p-3 bg-red-900/60 text-neutral-100 shadow-lg backdrop-blur-md rounded-full cursor-pointer">
                         <FaPhone size={22} />
                     </a>
 
-                    <a
-                        href="https://wa.me/79650934512"
+                    <a href="https://wa.me/79650934512"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 text-green-500 bg-red-900/60 shadow-lg backdrop-blur-md rounded-full cursor-pointer"
-                    >
+                        className="p-3 text-green-500 bg-red-900/60 shadow-lg backdrop-blur-md rounded-full cursor-pointer">
                         <FaWhatsapp size={22} />
                     </a>
 
-                    <a
-                        href="https://vk.com/spb.sk_svarog"
+                    <a href="https://vk.com/spb.sk_svarog"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 text-blue-500 bg-red-900/60 shadow-lg backdrop-blur-md rounded-full cursor-pointer"
-                    >
+                        className="p-3 text-blue-500 bg-red-900/60 shadow-lg backdrop-blur-md rounded-full cursor-pointer">
                         <FaVk size={22} />
                     </a>
                 </div>
@@ -39,7 +33,7 @@ const ConnectionButton = ({ hidden }: { hidden?: boolean }) => {
 
             <button
                 onClick={() => setOpen(!open)}
-                className="p-5 bg-red-600 text-white rounded-full shadow-xl hover:bg-red-700 transition"
+                className="opacity-80 p-5 bg-red-600 text-white rounded-full shadow-xl hover:bg-red-700 transition"
             >
                 <FaMessage size={24} />
             </button>
