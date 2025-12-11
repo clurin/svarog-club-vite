@@ -2,6 +2,7 @@ import Intro from './Intro'
 import Disciplines from './Disciplines'
 import Schedule from './Schedule'
 import Coaches from './Coaches'
+import GymSelectButton from './Gym/GymSelectButton'
 
 const Acomponent = () => {
     return (
@@ -9,6 +10,7 @@ const Acomponent = () => {
             <Intro />
             <Disciplines />
             <Schedule />
+            <GymSelectButton />
             <Coaches />
         </div>
     )

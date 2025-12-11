@@ -11,7 +11,7 @@ export default function Coaches() {
     <div className="pt-19 pb-6 bg-black">
       <p className="text-3xl text-center">Тренерский <br /> состав</p>
 
-      <div className="flex flex-wrap justify-center mt-9 gap-6 mx-6">
+      <div className="flex flex-wrap justify-center mt-9 gap-6 mx-5">
         {coaches.map(coach => (
           <div
             className="relative w-[300px] h-[220px] overflow-hidden cursor-pointer border-2 border-solid border-white

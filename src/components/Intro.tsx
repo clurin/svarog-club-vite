@@ -39,7 +39,7 @@ const Intro = () => {
 
             <button
                 onClick={() => setOpen(true)}
-                className="p-3 min-w-[200px] shadow-md shadow-neutral-500 max-[360px]:text-xl absolute bottom-5 left-1/2 -translate-x-1/2 hover:text-main-red transition-colors hover:bg-main-yellow bg-red-700 text-xl md:text-3xl text-center">
+                className="cursor-pointer p-3 min-w-[200px] shadow-md shadow-neutral-500 max-[360px]:text-xl absolute bottom-5 left-1/2 -translate-x-1/2 hover:text-main-red transition-colors hover:bg-main-yellow bg-red-700 text-xl md:text-3xl text-center">
                 Записаться на тренировку
             </button>
 

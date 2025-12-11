@@ -34,7 +34,7 @@ const DisciplineDetail = () => {
                 <p className="text-3xl md:text-4xl text-center mt-6 text-white bg-black p-2 md:p-5">Пробное занятие бесплатно</p>
                 <button
                     onClick={() => setOpen(true)}
-                    className="mt-5 w-[70%] max-w-xs p-3 text-xl md:text-2xl text-center
+                    className="cursor-pointer mt-5 w-[70%] max-w-xs p-3 text-xl md:text-2xl text-center
                      bg-red-700 text-white shadow-md hover:text-main-red hover:bg-main-yellow 
                      transition-colors"
                 >

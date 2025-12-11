@@ -12,7 +12,8 @@ const Disciplines = () => {
             <div className='flex flex-wrap justify-center gap-6 mt-9 md:flex-nowrap'>
                 {disciplines.map((discipline) => (
                     <div onClick={() => goToDetails(discipline.name)}
-                        key={discipline.position} className='transform transition-transform duration-300 hover:-translate-y-2
+                        key={discipline.position} className='cursor-pointer
+                         transform transition-transform duration-300 hover:-translate-y-2
                     relative border-2 border-solid border-white shadow-lg shadow-neutral-600'>
                         <p className='absolute inset-0 text-2xl flex justify-center items-center'>{discipline.title}</p>
                         <img

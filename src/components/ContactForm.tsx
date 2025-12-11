@@ -6,6 +6,31 @@ interface ContactFormProps {
 }
 
 const ContactForm = ({ onClose }: ContactFormProps) => {
+    const saveUTM = () => {
+        const params = new URLSearchParams(window.location.search)
+        const utm = {
+            utm_source: params.get("utm_source") || "",
+            utm_medium: params.get("utm_medium") || "",
+            utm_campaign: params.get("utm_campaign") || "",
+            utm_content: params.get("utm_content") || "",
+            utm_term: params.get("utm_term") || ""
+        }
+
+        if (Object.values(utm).some(v => v)) {
+            localStorage.setItem("utm", JSON.stringify(utm))
+        }
+
+        return utm
+    }
+
+    const getUTM = () => {
+        const saved = localStorage.getItem("utm")
+        if (saved) return JSON.parse(saved)
+
+        return saveUTM()
+    }
+
+
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [loading, setLoading] = useState(false)
@@ -60,11 +85,17 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
         setError("")
 
         const formData = new FormData()
+        const utm = getUTM()
         formData.append("name", normalizedName)
         formData.append("phone", normalizedPhone)
+        formData.append("utm_source", utm.utm_source)
+        formData.append("utm_medium", utm.utm_medium)
+        formData.append("utm_campaign", utm.utm_campaign)
+        formData.append("utm_content", utm.utm_content)
+        formData.append("utm_term", utm.utm_term)
 
         try {
-            const res = await fetch("https://svarog-club.ru/send.php", {
+            const res = await fetch("https://svarog-club.ru/sendUTM.php", {
                 method: "POST",
                 body: formData,
             })
@@ -91,8 +122,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
             <div className="bg-neutral-800 p-6 rounded-xl w-[90%] max-w-md shadow-xl relative">
                 <button
                     onClick={onClose}
-                    className="absolute right-3 top-2 text-2xl hover:text-red-600"
-                >
+                    className="absolute right-3 top-2 text-2xl hover:text-red-600"                >
                     ×
                 </button>
 
@@ -112,8 +142,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                                 setName(value)
                             }}
                             required
-                            className={`border p-3 rounded-md ${error && error.toLowerCase().includes("имя") ? "border-red-500" : ""}`}
-                        />
+                            className={`border p-3 rounded-md ${error && error.toLowerCase().includes("имя") ? "border-red-500" : ""}`} />
 
                         {error && error.toLowerCase().includes("имя") && (
                             <p className="text-red-500 text-sm mt-1">{error}</p>
@@ -129,8 +158,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                             onChange={(e) => setPhone(e.target.value)}
                             required
                             className={`border p-3 rounded-md ${error && error.toLowerCase().includes("номер") ? "border-red-500" : ""
-                                }`}
-                        />
+                                }`} />
                         {error && error.toLowerCase().includes("номер") && (
                             <p className="text-red-500 text-sm mt-1">{error}</p>
                         )}
@@ -139,8 +167,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="bg-red-700 text-white py-3 rounded-md hover:bg-red-600 transition"
-                    >
+                        className="bg-red-700 text-white py-3 rounded-md hover:bg-red-600 transition"                    >
                         {loading ? "Отправка..." : "Отправить"}
                     </button>
                 </form>

@@ -6,7 +6,9 @@ const Header = () => {
     return (
         <div className='flex flex-col gap-2.5 items-center justify-center w-full h-24 px-10 bg-neutral-800'>
             <p onClick={() => navigate('/')}
-                className='text-main-red text-3xl md:text-3xl text-shadow-md text-shadow-red-700'>СВАРОГ</p>
+                className='cursor-pointer text-main-red text-3xl md:text-3xl text-shadow-md text-shadow-red-700'>
+                СВАРОГ
+            </p>
             <div className="flex gap-10">
                 <a href="tel:+78129821049" className="hover:underline text-2xl text-nowrap">
                     +7 (812) 982-10-49
